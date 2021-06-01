@@ -21,8 +21,8 @@ jobs:
       with:
         dotnet-version: 5.0.x
     - name: Restore dependencies
-      run: ls -R
       working-directory: ${{env.working-directgory}}
+      run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
     - name: Test
