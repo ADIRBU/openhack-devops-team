@@ -10,7 +10,7 @@ pool:
   vmImage: 'windows-latest'
 
 variables:
-  solution: '/apis/poi/*.sln'
+  solution: './apis/poi/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
