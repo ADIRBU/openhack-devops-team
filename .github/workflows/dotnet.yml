@@ -18,7 +18,7 @@ jobs:
       with:
         dotnet-version: 5.0.x
     - name: Restore dependencies
-      run: dotnet restore ./apis/poi/poi.sln
+      run: dotnet restore ./apis/poi/web/poi.csproj
     - name: Build
       run: dotnet build --no-restore
     - name: Test
