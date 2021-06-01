@@ -11,7 +11,7 @@ jobs:
 
     runs-on: windows-latest
     env:
-      working-directory: ./apis/poi/
+      working-directory: ./apis/poi/poi.sln
  
       
     steps:
