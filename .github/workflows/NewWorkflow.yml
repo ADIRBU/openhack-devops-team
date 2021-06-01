@@ -8,11 +8,8 @@ on:
 
 jobs:
   build:
-
     runs-on: windows-latest
-    env:
-      working-directory: C:\Users\runneradmin\AppData\Local\Microsoft\dotnet
- 
+
       
     steps:
     - uses: actions/checkout@v2
@@ -21,7 +18,6 @@ jobs:
       with:
         dotnet-version: 5.0.x
     - name: Restore dependencies
-      working-directory: ${{env.working-directgory}}
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
