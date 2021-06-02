@@ -24,6 +24,16 @@ steps:
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'OTA-PRD-1570 (40006445-788e-4484-b2ab-16932d22982c)'
+    appType: 'webAppLinux'
+    WebAppName: 'hackerfive'
+    deployToSlotOrASE: true
+    ResourceGroupName: 'hackerfive-rg'
+    SlotName: 'production'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
     msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\WebApp.zip" /p:DeployIisAppPath="Default Web Site"'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
